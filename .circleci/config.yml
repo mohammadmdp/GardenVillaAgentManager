@@ -11,7 +11,7 @@ jobs:
       - run:
           name: install OpenJDK17
           command: |
-            apt install openjdk-17-jdk openjdk-17-jre
+            sudo apt-get install openjdk-17-jdk openjdk-17-jre
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
       - run:
