@@ -8,6 +8,10 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
+      - run:
+          name: install OpenJDK17
+          command: |
+            apt install openjdk-17-jdk openjdk-17-jre
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
       - run:
